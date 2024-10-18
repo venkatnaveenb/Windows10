@@ -36,8 +36,6 @@ Function GetFolderSize {
 }
    
 try {
-    $UserHomeFolder = [System.Environment]::GetFolderPath('UserProfile')
-    
     # Iterate through each logical disk to get information
     $DiskInfo = Get-WmiObject -Class Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 }
     foreach ($disk in $DiskInfo) {
